@@ -341,6 +341,19 @@ serviceMonitors: {}
 #    labels:
 #      foo: foo
 
+vmServiceScrapes: {}
+#  app-vms:
+#    endpoints:
+#    - interval: 30s
+#      port: exporter
+#      path: /metrics
+#    extraSelectorLabels:
+#      app: nginx
+#    labels:
+#      foo: foo
+#    sampleLimit: 1000
+#    streamParse: true
+
 extraDeploy: {}
 #  net-pol: |-
 #    apiVersion: networking.k8s.io/v1

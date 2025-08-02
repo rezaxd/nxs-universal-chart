@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.8.4 - Unreleased
+* feature: Added support for VMServiceScrape (VictoriaMetrics ServiceMonitor equivalent)
+
 ## 2.8.3 - December 26, 2024
 * feature: Made `progressDeadlineSeconds` configurable in deployments
 
