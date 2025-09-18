@@ -28,9 +28,9 @@ spec:
   rules:
   {{- range $ing.hosts }}
   - {{ if .hostname -}}
-    host: {{ include "helpers.tplvalues.render" (dict "value" .hostname "context" $) }}
+    host: {{ include "helpers.tplvalues.render" (dict "value" .hostname "context" $) | quote }}
     {{- else -}}
-    host: {{ $host }}
+    host: {{ $host | quote }}
     {{- end }}
     http:
       paths:
@@ -49,9 +49,9 @@ spec:
   - hosts:
     {{- range $ing.hosts }}
     {{- if .hostname }}
-    - {{ include "helpers.tplvalues.render" (dict "value" .hostname "context" $) }}
+    - {{ include "helpers.tplvalues.render" (dict "value" .hostname "context" $) | quote }}
     {{- else }}
-    - {{ $host }}
+    - {{ $host | quote }}
     {{- end }}
     {{- end }}
     secretName: {{ .tlsName | default (include "helpers.app.fullname" (dict "name" ($ing.name | default $host) "context" $)) }}-tls
