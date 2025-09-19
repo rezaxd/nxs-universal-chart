@@ -52,6 +52,8 @@ Who deploy into Kubernetes/OpenShift on regular basis.
       - [Hooks parameters](#hooks-parameters)
     - Prometheus-operator resources
       - [ServiceMonitors parameters](#servicemonitors-parameters)
+    - VictoriaMetrics-operator resources
+      - [VMServiceScrapes parameters](#vmservicescrapes-parameters)
     - Cert-manager resources
       - [Issuers parameters](#issuers-parameters)
       - [Certificates parameters](#certificates-parameters)
@@ -625,6 +627,20 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 | `labels`              | Extra ServiceMonitor labels              | `{}`  |
 | `endpoints`           | Array of ServiceMonitor endpoints        | `[]`  |
 | `extraSelectorLabels` | Extra selectorLabels for select workload | `{}`  |
+
+### VMServiceScrapes parameters
+
+`vmServiceScrapes` is a map of the VictoriaMetrics VMServiceScrape parameters, where key is name of VMServiceScrape.
+
+| Name                  | Description                              | Value |
+|-----------------------|------------------------------------------|-------|
+| `labels`              | Extra VMServiceScrape labels             | `{}`  |
+| `endpoints`           | Array of VMServiceScrape endpoints       | `[]`  |
+| `extraSelectorLabels` | Extra selectorLabels for select workload | `{}`  |
+| `sampleLimit`         | Maximum number of samples to scrape per target | `""`  |
+| `streamParse`         | Enable streaming parsing for better performance | `""`  |
+
+**Note:** VMServiceScrape is the VictoriaMetrics equivalent of ServiceMonitor and provides additional features specific to VictoriaMetrics ecosystem.
 
 ### PodDisruptionBudget parameters
 
