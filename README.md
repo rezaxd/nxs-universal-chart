@@ -305,6 +305,7 @@ the parameters that can be configured during installation. To check deployment e
 | `annotations`                   | Extra annotations for statefulSet                                                                                                                                      | `{}`  |
 | `replicas`                      | StatefulSet replicas count                                                                                                                                             | `1`   |
 | `minReadySeconds`               | StatefulSet minReadySeconds                                                                                                                                            | ``    |
+| `podManagementPolicy`           | StatefulSet podManagementPolicy                                                                                                                                        | ``    |
 | `strategy`                      | StatefulSet strategy                                                                                                                                                   | `{}`  |
 | `extraSelectorLabels`           | Extra selectorLabels for statefulSet                                                                                                                                   | `{}`  |
 | `podLabels`                     | Extra pod labels for statefulSet                                                                                                                                       | `{}`  |

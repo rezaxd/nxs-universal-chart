@@ -21,6 +21,7 @@ spec:
   {{- end }}
   serviceName: {{ include "helpers.app.fullname" (dict "name" .serviceName "context" $) }}
   {{- with .minReadySeconds }}minReadySeconds: {{ . }}{{- end }}
+  {{ with .podManagementPolicy }}podManagementPolicy: {{ . }}{{- end }}
   selector:
     matchLabels:
       {{- include "helpers.app.selectorLabels" $ | nindent 6 }}
